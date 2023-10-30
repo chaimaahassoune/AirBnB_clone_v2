@@ -24,7 +24,7 @@ def list_users():
 
 @app_views.route('/users/<user_id>', methods=['GET'], strict_slashes=False)
 @swag_from('documentation/user/get_user.yml', methods=['GET'])
-def list_user(user_id):
+def get_user(user_id):
     """ Retrieves a single user """
     user = storage.get(User, user_id)
     if not user:
